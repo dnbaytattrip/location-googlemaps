@@ -72,7 +72,7 @@ function page() {
          placeholder="Enter your email address"
          required
        />
-        <Field className='w-[350px] px-3 py-3 border border-gray-300 outline-none rounded-md mt-5 placeholder:pl-5'
+        <Field className='w-[350px] px-3 py-3 border border-gray-300 outline-none rounded-md mt-3 placeholder:pl-5'
                  type="password"
                  name="password"
                  id="password"
